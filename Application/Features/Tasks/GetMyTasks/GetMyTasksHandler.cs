@@ -31,7 +31,7 @@ namespace Application.Features.Tasks.GetMyTasks
             var cached = await _cache.GetAsync<PaginatedResult<TaskDto>>(cacheKey);
             if (cached is not null) return cached;
 
-            var (users, count) = await _repo.GetCompletedTasksAsync(_currentUser.UserId,request.Page, request.PageSize);
+            var (users, count) = await _repo.GetAllByUserAsync(_currentUser.UserId,request.Page, request.PageSize);
             var result = new PaginatedResult<TaskDto>
             {
                 Items = users.Select(u => new TaskDto

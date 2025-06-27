@@ -28,6 +28,7 @@ namespace Application.Features.Notifications.MarkAsRead
                 return false;
 
             notification.IsRead = true;
+            _repo.MarkAsRead(notification);
             await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return true;

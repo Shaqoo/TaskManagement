@@ -47,7 +47,6 @@ namespace Application.Features.Tasks.CreateTask
             };
 
             await _taskRepo.AddAsync(task);
-            await _uow.SaveChangesAsync();
 
             await _cache.RemoveAsync($"tasks:user:{_user.UserId}");
 

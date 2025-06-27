@@ -17,7 +17,7 @@ namespace Host.Controllers
     using Swashbuckle.AspNetCore.Annotations;
 
     [ApiController]
-    [Route("api/v{version:apiVersion}/tasks")]
+    [Route("api/[Controller]")]
     [ApiVersion("1.0")]
     [Authorize]
     [EnableRateLimiting("fixed")]  

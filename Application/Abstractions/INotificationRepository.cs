@@ -11,6 +11,7 @@ namespace Application.Abstractions
     {
         Task<List<Notification>> GetUnreadByUserIdAsync(Guid userId);
         Task<Notification?> GetByIdAsync(Guid id);
+        void MarkAsRead(Notification notification);
         Task AddAsync(Notification notification);
     }
 }

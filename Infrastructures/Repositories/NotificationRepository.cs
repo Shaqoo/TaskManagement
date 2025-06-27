@@ -23,10 +23,16 @@ namespace Infrastructures.Repositories
                 .OrderByDescending(n => n.CreatedAt)
                 .ToListAsync();
         }
-
         public async Task<Notification?> GetByIdAsync(Guid id)
         {
             return await _context.Notifications.FindAsync(id);
+        }
+
+        public void MarkAsRead(Notification notification)
+        {
+            notification.IsRead = true;
+            _context.Update(notification);
+            _context.SaveChanges();
         }
 
         public async Task AddAsync(Notification notification)

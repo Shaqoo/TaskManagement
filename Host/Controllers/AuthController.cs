@@ -20,7 +20,7 @@ namespace Host.Controllers
     using Swashbuckle.AspNetCore.Annotations;
 
     [ApiController]
-    [Route("api/v{version:apiVersion}/user")]
+    [Route("api/[Controller]")]
     [ApiVersion("1.0")]
     [EnableRateLimiting("fixed")]
     public class UsersController : ControllerBase

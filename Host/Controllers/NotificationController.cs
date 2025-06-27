@@ -12,7 +12,7 @@ namespace Host.Controllers
 
     [ApiController]
     [Authorize]
-    [Route("api/v{version:apiVersion}/notifications")]
+    [Route("api/[Controller]")]
     [ApiVersion("1.0")]
     public class NotificationController : ControllerBase
     {
